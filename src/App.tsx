@@ -1,21 +1,19 @@
 import {
-    ChakraProvider,
-    Box,
-    Text,
-    Link,
-    VStack,
-    Code,
-    Grid,
-    theme,
+  ChakraProvider,
 } from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
+import Footer from "./components/Footer"
+import Hero from "./components/Hero"
+import Navbar from "./components/Navbar"
+import Spacer from "./components/Spacer"
+import TechUsed from "./components/TechUsed"
+import theme from "./components/theme/Theme"
 
 export const App = () => (
-    <ChakraProvider theme={theme}>
-        <Box textAlign="center" fontSize="xl">
-            <Grid minH="100vh" p={3}>
-                <ColorModeSwitcher justifySelf="flex-end" />
-            </Grid>
-        </Box>
-    </ChakraProvider>
+  <ChakraProvider theme={theme}>
+    <Navbar />
+    <Hero />
+    {/* <TechUsed /> */}
+    <Spacer />
+    <Footer />
+  </ChakraProvider>
 )
