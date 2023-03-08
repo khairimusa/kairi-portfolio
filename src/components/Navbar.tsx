@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   Link,
   IconButton,
@@ -13,7 +12,9 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { Routes, Route } from "react-router-dom";
 import LogoSmall from './LogoSmall';
+import { App } from '../App';
 
 const Links = ['About', 'Experience', 'Work', 'Contact'];
 
@@ -39,23 +40,24 @@ export default function Navbar() {
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <IconButton
+          {/* <IconButton
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
-          />
+          /> */}
+          <Box><LogoSmall /></Box>
           <HStack spacing={8} alignItems={'center'}>
-            <Box><LogoSmall /></Box>
-            <HStack
+            {/* <HStack
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link}>
+                </NavLink>
               ))}
-            </HStack>
+            </HStack> */}
           </HStack>
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>

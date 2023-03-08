@@ -57,10 +57,10 @@ export default function Footer() {
         align={'center'}>
         <LogoFull />
         <Stack direction={'row'} spacing={6}>
-          <Link href={'#'}>About</Link>
-          <Link href={'#'}>Experience</Link>
-          <Link href={'#'}>Work</Link>
-          <Link href={'#'}>Contact</Link>
+          {/* <Link href={'/'}>About</Link>
+          <Link href={'/src/components/WorkInProgress.tsx'}>Experience</Link>
+          <Link href={'/src/components/WorkInProgress.tsx'}>Work</Link>
+          <Link href={'/src/components/WorkInProgress.tsx'}>Contact</Link> */}
         </Stack>
       </Container>
 

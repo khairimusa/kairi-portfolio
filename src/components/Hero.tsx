@@ -10,6 +10,7 @@ import {
   createIcon,
   Avatar,
   Center,
+  Link,
 } from '@chakra-ui/react';
 
 export default function Hero() {
@@ -45,7 +46,7 @@ export default function Hero() {
           <Heading
             fontWeight={600}
             fontFamily={'Caveat'}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+            fontSize={{ base: '4xl', sm: '4xl', md: '6xl' }}
             lineHeight={'110%'}>
 
             👋 Hi, my name is <br />
@@ -57,7 +58,7 @@ export default function Hero() {
             <Text color={'gray.500'}>
               I'm a <Text fontWeight={600} fontFamily={'Caveat'} as={'span'} color={'green.400'}> Software Developer </Text>
               based in <Text fontWeight={600} fontFamily={'Caveat'} as={'span'} color={'green.400'}>Kuala Lumpur, Malaysia</Text> . Currently, i work for
-              <Text fontWeight={600} fontFamily={'Caveat'} as={'span'} color={'green.400'}> Airasia</Text>
+              <Text fontWeight={600} fontFamily={'Caveat'} as={'span'} color={'green.400'}> AirAsia</Text>
             </Text>
           </Text>
 
@@ -67,16 +68,22 @@ export default function Hero() {
             align={'center'}
             alignSelf={'center'}
             position={'relative'}>
-            <Button
-              colorScheme={'green'}
-              bg={'green.400'}
-              rounded={'full'}
-              px={6}
-              _hover={{
-                bg: 'green.500',
-              }}>
-              Resume
-            </Button>
+            <Link
+              href='./khairi_2023.pdf'
+              download
+              style={{ textDecoration: 'none' }}
+            >
+              <Button
+                colorScheme={'green'}
+                bg={'green.400'}
+                rounded={'full'}
+                px={6}
+                _hover={{
+                  bg: 'green.500',
+                }}>
+                Resume
+              </Button>
+            </Link>
             <Box>
               <Icon
                 as={Arrow}
