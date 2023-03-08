@@ -12,7 +12,6 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { Routes, Route } from "react-router-dom";
 import LogoSmall from './LogoSmall';
 import { App } from '../App';
 
