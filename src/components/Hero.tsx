@@ -13,6 +13,19 @@ import {
   Link,
 } from '@chakra-ui/react';
 
+const RESUME_PDF_URL = 'https://firebasestorage.googleapis.com/v0/b/kai-portfolio-7c5c4.appspot.com/o/khairi_2023.pdf?alt=media&token=5c399423-5f4e-484d-b996-7a2371b00ffe';
+
+const downloadFile = (url: string) => {
+  console.log(url);
+  const fileName = url.split('/').pop();
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.setAttribute('download', fileName || '');
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+}
+
 export default function Hero() {
   return (
     <Box p={4} h='calc(100vh)'>
@@ -69,9 +82,8 @@ export default function Hero() {
             alignSelf={'center'}
             position={'relative'}>
             <Link
-              href='./khairi_2023.pdf'
-              download
               style={{ textDecoration: 'none' }}
+              onClick={() => downloadFile(RESUME_PDF_URL)}
             >
               <Button
                 colorScheme={'green'}
