@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "vite",
-    "build": "tsc && vite",
+    "build": "tsc && vite build",
     "test": "vite test",
     "serve": "vite preview"
   },
