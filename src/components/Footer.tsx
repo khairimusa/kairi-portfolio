@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
 import { ReactNode } from 'react';
-import LogoFull from './LogoFull';
+import LogoFull from './logos/LogoFull';
 
 const SocialButton = ({
   children,
@@ -51,11 +51,10 @@ export default function Footer() {
       <Container
         as={Stack}
         maxW={'6xl'}
-        py={4}
         spacing={4}
         justify={'center'}
         align={'center'}>
-        <LogoFull />
+        {/* <LogoFull /> */}
         <Stack direction={'row'} spacing={6}>
           {/* <Link href={'/'}>About</Link>
           <Link href={'/src/components/WorkInProgress.tsx'}>Experience</Link>
@@ -78,11 +77,15 @@ export default function Footer() {
           align={{ base: 'center', md: 'center' }}>
           <Text>© {new Date().getFullYear().toString()} Mohammad Khairi. All rights reserved</Text>
           <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Linkedin'} href={'#'}>
-              <FaLinkedin />
+            <SocialButton label={'Github'} href={'#'}>
+              <Link key={'linkedin'} target="_blank" href='https://www.linkedin.com/in/khairimusa/'>
+                <FaLinkedin />
+              </Link>
             </SocialButton>
             <SocialButton label={'Github'} href={'#'}>
-              <FaGithub />
+              <Link key={'linkedin'} target="_blank" href='https://github.com/khairimusa'>
+                <FaGithub />
+              </Link>
             </SocialButton>
             <SocialButton label={'Stackoverflow'} href={'#'}>
               <FaStackOverflow />

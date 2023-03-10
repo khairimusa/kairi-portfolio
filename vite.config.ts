@@ -6,6 +6,9 @@ export default defineConfig({
   build: {
     outDir: 'build',
   },
+  server: {
+    host: true
+  },
   plugins: [
     reactRefresh(),
     svgrPlugin({
