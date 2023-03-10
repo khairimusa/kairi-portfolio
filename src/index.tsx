@@ -1,18 +1,15 @@
 import { ColorModeScript } from "@chakra-ui/react"
 import * as React from "react"
-import ReactDOM from "react-dom"
 import { App } from "./App"
-import reportWebVitals from "./reportWebVitals"
-import * as serviceWorker from "./serviceWorker"
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+root.render(
   <React.StrictMode>
     <ColorModeScript />
     <App />
-  </React.StrictMode>,
-  document.getElementById("root"),
-)
+  </React.StrictMode>
+);
 
-serviceWorker.unregister()
-
-reportWebVitals()
+reportWebVitals();

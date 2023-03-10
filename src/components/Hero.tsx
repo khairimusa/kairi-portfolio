@@ -12,6 +12,7 @@ import {
   Center,
   Link,
 } from '@chakra-ui/react';
+import profilePicture from '../assets/profile-pic.png';
 
 const RESUME_PDF_URL = 'https://firebasestorage.googleapis.com/v0/b/kai-portfolio-7c5c4.appspot.com/o/khairi_2023.pdf?alt=media&token=5c399423-5f4e-484d-b996-7a2371b00ffe';
 
@@ -29,16 +30,6 @@ const downloadFile = (url: string) => {
 export default function Hero() {
   return (
     <Box p={4} h='calc(100vh)'>
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
 
       <Container maxW={'3xl'} alignContent={'center'}>
 
@@ -53,7 +44,7 @@ export default function Hero() {
               padding={2}
               backgroundColor={'green.500'}
               size={'2xl'}
-              src={require('../assets/profile-pic.png')}
+              src={profilePicture}
             />
           </Center>
           <Heading
