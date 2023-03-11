@@ -56,7 +56,7 @@ export default function Hero() {
           />
           <Heading
             fontWeight={600}
-            fontFamily={'Raleway'}
+            fontFamily={'Dm Sans'}
             fontSize={{ base: '2xl', sm: '4xl', md: '4xl' }}
             lineHeight={'110%'}>
             Hi, my name is <br />
@@ -64,26 +64,26 @@ export default function Hero() {
               Mohammad Khairi
             </Text>
           </Heading>
-          <Text style={{ hyphens: 'auto' }} fontFamily={'Raleway'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
+          <Text style={{ hyphens: 'auto' }} fontFamily={'Dm Sans'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
             <Text color={'darkgray.500'}>
-              I'm a <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> Software <span id='text-dev'>Developer</span> </Text>
-              based in <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}>Kuala Lumpur, Malaysia</Text>. Currently, i work for
+              I'm a <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Software <span id='text-dev'>Developer</span> </Text>
+              based in <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}>Kuala Lumpur, Malaysia</Text>. Currently, i work for
 
               <Link href={'https://capitala.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
-                <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> AirAsia (Capital A) ✈️</Text>
+                <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> AirAsia (Capital A)✈️</Text>
               </Link>
               . My main focus now is building new features for ikhlas.com for both
               <Link href={'https://ikhlas.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
-                <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> Web </Text> &
+                <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Web </Text> &
               </Link>
               <Link href={'https://apps.apple.com/us/app/ikhlas-your-companion/id1550705035'} target={'_blank'} style={{ textDecoration: 'none' }}>
-                <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> Mobile Application </Text>.
+                <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Mobile Application </Text>.
               </Link>
             </Text>
           </Text>
-          <Text fontFamily={'Raleway'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
+          <Text fontFamily={'Dm Sans'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
             <Text color={'darkgray.500'}>
-              Here are some of the technologies that i have been using lately :
+              Here are some of the technologies that i have been using lately:
             </Text>
           </Text>
 
@@ -154,7 +154,7 @@ export default function Hero() {
               />
               <Text
                 fontSize={'md'}
-                fontFamily={'Raleway'}
+                fontFamily={'Dm Sans'}
                 position={'absolute'}
                 left={'120px'}
                 top={'12px'}

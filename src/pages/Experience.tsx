@@ -16,7 +16,7 @@ const Experience = () => {
 
           <Heading
             fontWeight={600}
-            fontFamily={'Raleway'}
+            fontFamily={'Dm Sans'}
             fontSize={{ base: '4xl', sm: '6xl', md: '6xl' }}
             lineHeight={'110%'}
           >
@@ -25,7 +25,7 @@ const Experience = () => {
           </Heading>
           <Heading
             fontWeight={600}
-            fontFamily={'Raleway'}
+            fontFamily={'Dm Sans'}
             fontSize={{ base: '4xl', sm: '6xl', md: '6xl' }}
             lineHeight={'110%'}
           >
@@ -35,7 +35,7 @@ const Experience = () => {
 
           <Heading
             fontWeight={600}
-            fontFamily={'Raleway'}
+            fontFamily={'Dm Sans'}
             fontSize={{ base: '4xl', sm: '6xl', md: '6xl' }}
             lineHeight={'110%'}
           >
