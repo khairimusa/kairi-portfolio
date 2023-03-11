@@ -80,7 +80,7 @@ export default function Hero() {
             </Text>
           </Text>
 
-          <SimpleGrid columns={2}>
+          <SimpleGrid columns={{ base: 1, md: 2 }}>
             <Box height={'auto'}>
               <List spacing={5} pt={5} pb={5} pl={5}>
                 <ListItem>
@@ -105,7 +105,7 @@ export default function Hero() {
                 </ListItem>
                 <ListItem>
                   <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
-                  <Kbd padding={2}>Node.js</Kbd>
+                  <Kbd padding={2}>Next.js</Kbd>
                 </ListItem>
                 <ListItem>
                   <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
