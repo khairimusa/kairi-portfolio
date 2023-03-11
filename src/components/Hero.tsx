@@ -19,6 +19,7 @@ import {
   SlideFade,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { FiDownload } from "react-icons/fi";
 import { MdSubdirectoryArrowRight } from 'react-icons/md';
 import profilePicture from '../assets/profile-pic.png';
 
@@ -44,24 +45,28 @@ export default function Hero() {
   }, [load])
 
   return (
-    <SlideFade in={load} offsetY={'100px'}>
 
-      <Box minH='calc(100vh)'>
+    <Box minH='calc(100vh)'>
 
-        <Container maxW={'3xl'} alignContent={'center'}>
+      <Container maxW={'3xl'} alignContent={'center'}>
 
-          <Stack
-            as={Box}
-            textAlign={'left'}
-            justifyContent={'center'}
-            spacing={{ base: 8, md: 8 }}
-            py={{ base: 5 }}>
+        <Stack
+          as={Box}
+          textAlign={'left'}
+          justifyContent={'center'}
+          spacing={{ base: 8, md: 8 }}
+          py={{ base: 5 }}>
+
+          <SlideFade delay={0.1} in={load} offsetX={'300px'}>
             <Avatar
               padding={2}
               backgroundColor={'green.500'}
               size={'xl'}
               src={profilePicture}
             />
+          </SlideFade>
+
+          <SlideFade delay={0.2} in={load} offsetX={'-300px'}>
             <Heading
               fontWeight={600}
               fontFamily={'Dm Sans'}
@@ -72,6 +77,10 @@ export default function Hero() {
                 Mohammad Khairi
               </Text>
             </Heading>
+          </SlideFade>
+
+          <SlideFade delay={0.3} in={load} offsetX={'300px'}>
+
             <Text style={{ hyphens: 'auto' }} fontFamily={'Dm Sans'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
               <Text color={'darkgray.500'}>
                 I'm a <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Software <span id='text-dev'>Developer</span> </Text>
@@ -86,11 +95,15 @@ export default function Hero() {
                 </Link>
                 and
                 <Link href={'https://apps.apple.com/us/app/ikhlas-your-companion/id1550705035'} target={'_blank'} style={{ textDecoration: 'none' }}>
-                  <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Mobile Application <sup><Icon as={ExternalLinkIcon} w={{ xs: 2, sm: 3, md: 4 }} h={{ xs: 2, sm: 3, md: 4 }} /></sup></Text>
+                  {/* <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Mobile Application <sup><Icon as={ExternalLinkIcon} w={{ xs: 2, sm: 3, md: 4 }} h={{ xs: 2, sm: 3, md: 4 }} /></sup></Text> */}
+                  <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Mobile Application <sup><ExternalLinkIcon /></sup></Text>
                 </Link>
                 .
               </Text>
             </Text>
+
+            <Box height={{ base: 10, md: 10, lg: 10 }} />
+
             <Text fontFamily={'Dm Sans'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
               <Text color={'darkgray.500'}>
                 Here are some of the technologies that i have been using lately:
@@ -132,7 +145,7 @@ export default function Hero() {
               </Box>
             </SimpleGrid>
 
-
+            <Box height={{ base: 10, md: 10, lg: 10 }} />
 
             <Stack
               direction={'column'}
@@ -150,7 +163,7 @@ export default function Hero() {
                     bg: 'green.500',
                   }}
                   onClick={() => downloadFile(RESUME_PDF_URL)}>
-                  Resume
+                  <Icon as={FiDownload} />&nbsp; Resume
                 </Button>
               </Link>
               <Box>
@@ -159,24 +172,28 @@ export default function Hero() {
                   color={useColorModeValue('gray.800', 'gray.300')}
                   w={71}
                   position={'absolute'}
-                  left={100}
-                  top={'33'}
+                  left={125}
+                  top={'30'}
                 />
                 <Text
                   fontSize={'md'}
                   fontFamily={'Dm Sans'}
                   position={'absolute'}
-                  left={'120px'}
-                  top={'12px'}
+                  left={'140px'}
+                  top={'0px'}
                   transform={'rotate(30deg)'}>
                   Resume PDF
                 </Text>
               </Box>
             </Stack>
-          </Stack>
-        </Container>
-      </Box>
-    </SlideFade>
+
+            <Box height={{ base: 20, md: 20, lg: 20 }} />
+
+          </SlideFade>
+
+        </Stack>
+      </Container>
+    </Box>
 
   );
 }
