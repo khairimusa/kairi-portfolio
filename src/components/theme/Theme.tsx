@@ -5,8 +5,7 @@ const theme = extendTheme({
     heading: `'Raleway', sans-serif`,
     body: `'Raleway', sans-serif`,
   },
-  initialColorMode: 'dark',
-  useSystemColorMode: false,
+  useSystemColorMode: true,
 })
 
 export default theme

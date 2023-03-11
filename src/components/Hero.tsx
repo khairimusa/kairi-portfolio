@@ -16,7 +16,9 @@ import {
   ListItem,
   Kbd,
   SimpleGrid,
+  SlideFade,
 } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 import { MdSubdirectoryArrowRight } from 'react-icons/md';
 import profilePicture from '../assets/profile-pic.png';
 
@@ -34,137 +36,148 @@ const downloadFile = (url: string) => {
 }
 
 export default function Hero() {
+
+  const [load, setLoad] = useState(false);
+
+  useEffect(() => {
+    setLoad(true);
+  }, [load])
+
   return (
-    <Box p={4} minH='calc(100vh)'>
+    <SlideFade in={load} offsetY={'100px'}>
 
-      <Container maxW={'3xl'} alignContent={'center'}>
+      <Box minH='calc(100vh)'>
 
-        <Stack
-          as={Box}
-          textAlign={'left'}
-          justifyContent={'center'}
-          spacing={{ base: 8, md: 8 }}
-          py={{ base: 5 }}>
-          <Avatar
-            padding={2}
-            backgroundColor={'green.500'}
-            size={'xl'}
-            src={profilePicture}
-          />
-          <Heading
-            fontWeight={600}
-            fontFamily={'Dm Sans'}
-            fontSize={{ base: '2xl', sm: '4xl', md: '4xl' }}
-            lineHeight={'110%'}>
-            Hi, my name is <br />
-            <Text as={'span'} color={'green.400'}>
-              Mohammad Khairi
-            </Text>
-          </Heading>
-          <Text style={{ hyphens: 'auto' }} fontFamily={'Dm Sans'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
-            <Text color={'darkgray.500'}>
-              I'm a <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Software <span id='text-dev'>Developer</span> </Text>
-              based in <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}>Kuala Lumpur, Malaysia</Text>. Currently, i work for
-
-              <Link href={'https://capitala.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
-                <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'} > AirAsia (Capital A) <sup><Icon as={ExternalLinkIcon} w={{ xs: 2, sm: 3, md: 4 }} h={{ xs: 2, sm: 3, md: 4 }} /></sup></Text>
-              </Link>
-              . My main focus now is building new features for ikhlas.com for both
-              <Link href={'https://ikhlas.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
-                <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Web <sup><Icon as={ExternalLinkIcon} w={{ xs: 2, sm: 3, md: 4 }} h={{ xs: 2, sm: 3, md: 4 }} /></sup> </Text>
-              </Link>
-              and
-              <Link href={'https://apps.apple.com/us/app/ikhlas-your-companion/id1550705035'} target={'_blank'} style={{ textDecoration: 'none' }}>
-                <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Mobile Application <sup><Icon as={ExternalLinkIcon} w={{ xs: 2, sm: 3, md: 4 }} h={{ xs: 2, sm: 3, md: 4 }} /></sup></Text>
-              </Link>
-              .
-            </Text>
-          </Text>
-          <Text fontFamily={'Dm Sans'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
-            <Text color={'darkgray.500'}>
-              Here are some of the technologies that i have been using lately:
-            </Text>
-          </Text>
-
-          <SimpleGrid columns={{ base: 1, md: 2 }}>
-            <Box height={'auto'}>
-              <List spacing={5} pt={5} pb={5} pl={5}>
-                <ListItem>
-                  <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
-                  <Kbd padding={2}>Javascript (ES6+)</Kbd>
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
-                  <Kbd padding={2}>React</Kbd>
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
-                  <Kbd padding={2}>Flutter</Kbd>
-                </ListItem>
-              </List>
-            </Box>
-            <Box height={'auto'}>
-              <List spacing={5} pt={5} pb={5} pl={5}>
-                <ListItem>
-                  <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
-                  <Kbd padding={2}>Typescript</Kbd>
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
-                  <Kbd padding={2}>Next.js</Kbd>
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
-                  <Kbd padding={2}>GraphQL</Kbd>
-                </ListItem>
-              </List>
-            </Box>
-          </SimpleGrid>
-
-
+        <Container maxW={'3xl'} alignContent={'center'}>
 
           <Stack
-            direction={'column'}
-            align={'left'}
-            alignSelf={'left'}
-            position={'relative'}>
-            <Link
-              style={{ textDecoration: 'none', cursor: 'default' }}>
-              <Button
-                colorScheme={'green'}
-                bg={'green.400'}
-                rounded={'full'}
-                px={6}
-                _hover={{
-                  bg: 'green.500',
-                }}
-                onClick={() => downloadFile(RESUME_PDF_URL)}>
-                Resume
-              </Button>
-            </Link>
-            <Box>
-              <Icon
-                as={Arrow}
-                color={useColorModeValue('gray.800', 'gray.300')}
-                w={71}
-                position={'absolute'}
-                left={100}
-                top={'33'}
-              />
-              <Text
-                fontSize={'md'}
-                fontFamily={'Dm Sans'}
-                position={'absolute'}
-                left={'120px'}
-                top={'12px'}
-                transform={'rotate(30deg)'}>
-                Resume PDF
+            as={Box}
+            textAlign={'left'}
+            justifyContent={'center'}
+            spacing={{ base: 8, md: 8 }}
+            py={{ base: 5 }}>
+            <Avatar
+              padding={2}
+              backgroundColor={'green.500'}
+              size={'xl'}
+              src={profilePicture}
+            />
+            <Heading
+              fontWeight={600}
+              fontFamily={'Dm Sans'}
+              fontSize={{ base: '2xl', sm: '4xl', md: '4xl' }}
+              lineHeight={'110%'}>
+              Hi, my name is <br />
+              <Text as={'span'} color={'green.400'}>
+                Mohammad Khairi
               </Text>
-            </Box>
+            </Heading>
+            <Text style={{ hyphens: 'auto' }} fontFamily={'Dm Sans'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
+              <Text color={'darkgray.500'}>
+                I'm a <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Software <span id='text-dev'>Developer</span> </Text>
+                based in <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}>Kuala Lumpur, Malaysia</Text>. Currently, i work for
+
+                <Link href={'https://capitala.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
+                  <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'} > AirAsia (Capital A) <sup><Icon as={ExternalLinkIcon} w={{ xs: 2, sm: 3, md: 4 }} h={{ xs: 2, sm: 3, md: 4 }} /></sup></Text>
+                </Link>
+                . My main focus now is building new features for ikhlas.com for both
+                <Link href={'https://ikhlas.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
+                  <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Web <sup><Icon as={ExternalLinkIcon} w={{ xs: 2, sm: 3, md: 4 }} h={{ xs: 2, sm: 3, md: 4 }} /></sup> </Text>
+                </Link>
+                and
+                <Link href={'https://apps.apple.com/us/app/ikhlas-your-companion/id1550705035'} target={'_blank'} style={{ textDecoration: 'none' }}>
+                  <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Mobile Application <sup><Icon as={ExternalLinkIcon} w={{ xs: 2, sm: 3, md: 4 }} h={{ xs: 2, sm: 3, md: 4 }} /></sup></Text>
+                </Link>
+                .
+              </Text>
+            </Text>
+            <Text fontFamily={'Dm Sans'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
+              <Text color={'darkgray.500'}>
+                Here are some of the technologies that i have been using lately:
+              </Text>
+            </Text>
+
+            <SimpleGrid columns={{ base: 1, md: 2 }}>
+              <Box height={'auto'}>
+                <List spacing={5} pt={5} pb={5} pl={5}>
+                  <ListItem>
+                    <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
+                    <Kbd padding={2}>Javascript (ES6+)</Kbd>
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
+                    <Kbd padding={2}>React</Kbd>
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
+                    <Kbd padding={2}>Flutter</Kbd>
+                  </ListItem>
+                </List>
+              </Box>
+              <Box height={'auto'}>
+                <List spacing={5} pt={5} pb={5} pl={5}>
+                  <ListItem>
+                    <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
+                    <Kbd padding={2}>Typescript</Kbd>
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
+                    <Kbd padding={2}>Next.js</Kbd>
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
+                    <Kbd padding={2}>GraphQL</Kbd>
+                  </ListItem>
+                </List>
+              </Box>
+            </SimpleGrid>
+
+
+
+            <Stack
+              direction={'column'}
+              align={'left'}
+              alignSelf={'left'}
+              position={'relative'}>
+              <Link
+                style={{ textDecoration: 'none', cursor: 'default' }}>
+                <Button
+                  colorScheme={'green'}
+                  bg={'green.400'}
+                  rounded={'full'}
+                  px={6}
+                  _hover={{
+                    bg: 'green.500',
+                  }}
+                  onClick={() => downloadFile(RESUME_PDF_URL)}>
+                  Resume
+                </Button>
+              </Link>
+              <Box>
+                <Icon
+                  as={Arrow}
+                  color={useColorModeValue('gray.800', 'gray.300')}
+                  w={71}
+                  position={'absolute'}
+                  left={100}
+                  top={'33'}
+                />
+                <Text
+                  fontSize={'md'}
+                  fontFamily={'Dm Sans'}
+                  position={'absolute'}
+                  left={'120px'}
+                  top={'12px'}
+                  transform={'rotate(30deg)'}>
+                  Resume PDF
+                </Text>
+              </Box>
+            </Stack>
           </Stack>
-        </Stack>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </SlideFade>
+
   );
 }
 
