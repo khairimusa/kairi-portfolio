@@ -69,8 +69,8 @@ export default function Hero() {
               I'm a <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> Software <span id='text-dev'>Developer</span> </Text>
               based in <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}>Kuala Lumpur, Malaysia</Text>. Currently, i work for
 
-              <Link href={'https://airasia.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
-                <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> AirAsia ✈️</Text>
+              <Link href={'https://capitala.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
+                <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> AirAsia (Capital A) ✈️</Text>
               </Link>
               . My main focus now is building new features for ikhlas.com for both
               <Link href={'https://ikhlas.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
