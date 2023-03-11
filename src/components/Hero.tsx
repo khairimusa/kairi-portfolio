@@ -64,13 +64,20 @@ export default function Hero() {
               Mohammad Khairi
             </Text>
           </Heading>
-          <Text fontFamily={'Raleway'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
+          <Text style={{ hyphens: 'auto' }} fontFamily={'Raleway'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
             <Text color={'darkgray.500'}>
               I'm a <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> Software <span id='text-dev'>Developer</span> </Text>
               based in <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}>Kuala Lumpur, Malaysia</Text>. Currently, i work for
 
               <Link href={'https://airasia.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
-                <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> AirAsia ✈️ </Text>
+                <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> AirAsia ✈️</Text>
+              </Link>
+              . My main focus now is building new features for ikhlas.com for both
+              <Link href={'https://ikhlas.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
+                <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> Web </Text> &
+              </Link>
+              <Link href={'https://apps.apple.com/us/app/ikhlas-your-companion/id1550705035'} target={'_blank'} style={{ textDecoration: 'none' }}>
+                <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> Mobile Application </Text>.
               </Link>
             </Text>
           </Text>
