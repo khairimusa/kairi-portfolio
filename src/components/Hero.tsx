@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import {
   Box,
   Heading,
@@ -10,17 +11,13 @@ import {
   createIcon,
   Avatar,
   Link,
-  Grid,
-  GridItem,
-  Flex,
   List,
   ListIcon,
   ListItem,
   Kbd,
   SimpleGrid,
 } from '@chakra-ui/react';
-import { FaReact } from 'react-icons/fa';
-import { MdCheckCircle, MdChevronRight, MdSettings, MdSubdirectoryArrowRight } from 'react-icons/md';
+import { MdSubdirectoryArrowRight } from 'react-icons/md';
 import profilePicture from '../assets/profile-pic.png';
 
 const RESUME_PDF_URL = 'https://firebasestorage.googleapis.com/v0/b/kai-portfolio-7c5c4.appspot.com/o/khairi_2023.pdf?alt=media&token=5c399423-5f4e-484d-b996-7a2371b00ffe';
@@ -70,15 +67,17 @@ export default function Hero() {
               based in <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}>Kuala Lumpur, Malaysia</Text>. Currently, i work for
 
               <Link href={'https://capitala.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
-                <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> AirAsia (Capital A)✈️</Text>
+                <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'} > AirAsia (Capital A) <sup><Icon as={ExternalLinkIcon} w={{ xs: 2, sm: 3, md: 4 }} h={{ xs: 2, sm: 3, md: 4 }} /></sup></Text>
               </Link>
               . My main focus now is building new features for ikhlas.com for both
               <Link href={'https://ikhlas.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
-                <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Web </Text> &
+                <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Web <sup><Icon as={ExternalLinkIcon} w={{ xs: 2, sm: 3, md: 4 }} h={{ xs: 2, sm: 3, md: 4 }} /></sup> </Text>
               </Link>
+              and
               <Link href={'https://apps.apple.com/us/app/ikhlas-your-companion/id1550705035'} target={'_blank'} style={{ textDecoration: 'none' }}>
-                <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Mobile Application </Text>.
+                <Text fontWeight={600} fontFamily={'Dm Sans'} as={'span'} color={'green.400'}> Mobile Application <sup><Icon as={ExternalLinkIcon} w={{ xs: 2, sm: 3, md: 4 }} h={{ xs: 2, sm: 3, md: 4 }} /></sup></Text>
               </Link>
+              .
             </Text>
           </Text>
           <Text fontFamily={'Dm Sans'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
