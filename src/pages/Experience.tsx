@@ -58,7 +58,7 @@ const Experience = () => {
                 backgroundColor={'white'}
               />
               <CardHeader>
-                <Flex fontFamily={'Dm Sans'} justify={'space-between'}>
+                <Flex fontFamily={'Dm Sans'} justify={'space-between'} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
                   <Box>
                     <Heading size='md'>Capital A Berhad</Heading>
                     <Text>Software Engineer I</Text>
@@ -90,7 +90,7 @@ const Experience = () => {
                 backgroundColor={'white'}
               />
               <CardHeader>
-                <Flex fontFamily={'Dm Sans'} justify={'space-between'}>
+                <Flex fontFamily={'Dm Sans'} justify={'space-between'} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
                   <Box>
                     <Heading size='md'>Dex Labs Sdn Bhd</Heading>
                     <Text>Software Developer</Text>
@@ -123,7 +123,7 @@ const Experience = () => {
                 backgroundColor={'white'}
               />
               <CardHeader>
-                <Flex fontFamily={'Dm Sans'} justify={'space-between'}>
+                <Flex fontFamily={'Dm Sans'} justify={'space-between'} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
                   <Box>
                     <Heading size='md'>Appasia Berhad</Heading>
                     <Text>Web Application Developer</Text>
@@ -154,7 +154,7 @@ const Experience = () => {
                 backgroundColor={'white'}
               />
               <CardHeader>
-                <Flex fontFamily={'Dm Sans'} justify={'space-between'}>
+                <Flex fontFamily={'Dm Sans'} justify={'space-between'} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
                   <Box>
                     <Heading size='md'>Kerry Logistics</Heading>
                     <Text>Junior Software Engineer</Text>
@@ -185,7 +185,7 @@ const Experience = () => {
                 backgroundColor={'white'}
               />
               <CardHeader>
-                <Flex fontFamily={'Dm Sans'} justify={'space-between'}>
+                <Flex fontFamily={'Dm Sans'} justify={'space-between'} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
                   <Box>
                     <Heading size='md'>Theta Service Partner Sdn Bhd</Heading>
                     <Text>Software Engineer Intern</Text>
