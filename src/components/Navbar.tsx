@@ -15,8 +15,7 @@ import LogoSmall from './logos/LogoSmall';
 import { Link } from 'react-router-dom';
 
 const Links = [
-  { key: 'aboutMe', text: 'About Me', link: '/' },
-  { key: 'experience', text: 'Experience', link: '/experience' },
+  { key: 'aboutMe', text: 'About Me', link: '/experience' },
   { key: 'project', text: 'Project', link: '/projects' },
   { key: 'contact', text: 'Contact', link: '/contact' },
 ];
