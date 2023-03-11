@@ -24,7 +24,6 @@ const Projects = () => {
 
             <Heading
               fontWeight={600}
-              fontFamily={'Dm Sans'}
               fontSize={{ base: '4xl', sm: '6xl', md: '6xl' }}
               lineHeight={'110%'}
             >
@@ -33,7 +32,6 @@ const Projects = () => {
             </Heading>
             <Heading
               fontWeight={600}
-              fontFamily={'Dm Sans'}
               fontSize={{ base: '4xl', sm: '6xl', md: '6xl' }}
               lineHeight={'110%'}
             >
@@ -43,7 +41,6 @@ const Projects = () => {
 
             <Heading
               fontWeight={600}
-              fontFamily={'Dm Sans'}
               fontSize={{ base: '4xl', sm: '6xl', md: '6xl' }}
               lineHeight={'110%'}
             >
