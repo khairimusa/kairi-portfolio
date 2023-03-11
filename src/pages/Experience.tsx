@@ -70,7 +70,7 @@ const Experience = () => {
                 </Flex>
               </CardHeader>
               <CardBody>
-                <Stack direction='row'>
+                <Stack direction={{ sm: 'column', md: 'row', lg: 'row' }} textAlign={'center'}>
                   <Badge>React</Badge>
                   <Badge>Next.js</Badge>
                   <Badge>Flutter</Badge>
@@ -102,7 +102,7 @@ const Experience = () => {
                 </Flex>
               </CardHeader>
               <CardBody>
-                <Stack direction='row'>
+                <Stack direction={{ sm: 'column', md: 'row', lg: 'row' }} textAlign={'center'}>
                   <Badge>React</Badge>
                   <Badge>Express.js</Badge>
                   <Badge>MongoDB</Badge>
@@ -135,7 +135,7 @@ const Experience = () => {
                 </Flex>
               </CardHeader>
               <CardBody>
-                <Stack direction='row'>
+                <Stack direction={{ sm: 'column', md: 'row', lg: 'row' }} textAlign={'center'}>
                   <Badge>Angular</Badge>
                   <Badge>PHP Laravel</Badge>
                   <Badge>MySQL</Badge>
@@ -166,7 +166,7 @@ const Experience = () => {
                 </Flex>
               </CardHeader>
               <CardBody>
-                <Stack direction='row'>
+                <Stack direction={{ sm: 'column', md: 'row', lg: 'row' }} textAlign={'center'}>
                   <Badge>Angular</Badge>
                   <Badge>PHP Laravel</Badge>
                   <Badge>MySQL</Badge>
@@ -197,7 +197,7 @@ const Experience = () => {
                 </Flex>
               </CardHeader>
               <CardBody>
-                <Stack direction='row'>
+                <Stack direction={{ sm: 'column', md: 'row', lg: 'row' }} textAlign={'center'}>
                   <Badge>Angular</Badge>
                   <Badge>Sring MVC</Badge>
                   <Badge>Oracle DB</Badge>
