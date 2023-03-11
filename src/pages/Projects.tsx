@@ -4,7 +4,7 @@ const Projects = () => {
   return (
     <Box p={4} h='calc(100vh)'>
 
-      <Container maxW={'6xl'} alignContent={'center'}>
+      <Container maxW={'3xl'} alignContent={'center'}>
 
         <Stack
           as={Box}
@@ -16,7 +16,7 @@ const Projects = () => {
 
           <Heading
             fontWeight={600}
-            fontFamily={'Caveat'}
+            fontFamily={'Raleway'}
             fontSize={{ base: '4xl', sm: '6xl', md: '6xl' }}
             lineHeight={'110%'}
           >
@@ -25,7 +25,7 @@ const Projects = () => {
           </Heading>
           <Heading
             fontWeight={600}
-            fontFamily={'Caveat'}
+            fontFamily={'Raleway'}
             fontSize={{ base: '4xl', sm: '6xl', md: '6xl' }}
             lineHeight={'110%'}
           >
@@ -35,7 +35,7 @@ const Projects = () => {
 
           <Heading
             fontWeight={600}
-            fontFamily={'Caveat'}
+            fontFamily={'Raleway'}
             fontSize={{ base: '4xl', sm: '6xl', md: '6xl' }}
             lineHeight={'110%'}
           >

@@ -33,8 +33,8 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+      <Flex bg={useColorModeValue('gray.100', 'gray.900')} justifyContent={'center'} alignItems={'center'} px={4}>
+        <Flex w={'3xl'} h={20} textAlign={'center'} justifyContent={'space-between'} alignItems={'center'}>
           <IconButton
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -65,17 +65,16 @@ export default function Navbar() {
             </Stack>
           </Flex>
         </Flex>
-
-        {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-              {Links.map((item) => (
-                <NavLink key={item.key} props={item}>{item.text}</NavLink>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
-      </Box>
+      </Flex>
+      {isOpen ? (
+        <Box bg={useColorModeValue('gray.100', 'gray.900')} pl={4} pb={4} display={{ md: 'none' }}>
+          <Stack as={'nav'} spacing={4}>
+            {Links.map((item) => (
+              <NavLink key={item.key} props={item}>{item.text}</NavLink>
+            ))}
+          </Stack>
+        </Box>
+      ) : null}
     </>
   );
 }

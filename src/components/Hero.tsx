@@ -9,9 +9,18 @@ import {
   useColorModeValue,
   createIcon,
   Avatar,
-  Center,
   Link,
+  Grid,
+  GridItem,
+  Flex,
+  List,
+  ListIcon,
+  ListItem,
+  Kbd,
+  SimpleGrid,
 } from '@chakra-ui/react';
+import { FaReact } from 'react-icons/fa';
+import { MdCheckCircle, MdChevronRight, MdSettings, MdSubdirectoryArrowRight } from 'react-icons/md';
 import profilePicture from '../assets/profile-pic.png';
 
 const RESUME_PDF_URL = 'https://firebasestorage.googleapis.com/v0/b/kai-portfolio-7c5c4.appspot.com/o/khairi_2023.pdf?alt=media&token=5c399423-5f4e-484d-b996-7a2371b00ffe';
@@ -29,53 +38,92 @@ const downloadFile = (url: string) => {
 
 export default function Hero() {
   return (
-    <Box p={4} h='calc(100vh)'>
+    <Box p={4} minH='calc(100vh)'>
 
       <Container maxW={'3xl'} alignContent={'center'}>
 
         <Stack
           as={Box}
-          textAlign={'center'}
+          textAlign={'left'}
           justifyContent={'center'}
-          spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}>
-          <Center>
-            <Avatar
-              padding={2}
-              backgroundColor={'green.500'}
-              size={'2xl'}
-              src={profilePicture}
-            />
-          </Center>
+          spacing={{ base: 8, md: 8 }}
+          py={{ base: 5 }}>
+          <Avatar
+            padding={2}
+            backgroundColor={'green.500'}
+            size={'xl'}
+            src={profilePicture}
+          />
           <Heading
             fontWeight={600}
-            fontFamily={'Caveat'}
-            fontSize={{ base: '4xl', sm: '4xl', md: '6xl' }}
+            fontFamily={'Raleway'}
+            fontSize={{ base: '2xl', sm: '4xl', md: '4xl' }}
             lineHeight={'110%'}>
-
-            👋 Hi, my name is <br />
+            Hi, my name is <br />
             <Text as={'span'} color={'green.400'}>
               Mohammad Khairi
             </Text>
           </Heading>
-          <Text fontFamily={'Raleway'} fontSize={{ base: '2xl', sm: '2xl', md: '2xl' }}>
-            <Text color={'gray.500'}>
-              I'm a <Text fontWeight={600} fontFamily={'Caveat'} as={'span'} color={'green.400'}> Software Developer </Text>
-              based in <Text fontWeight={600} fontFamily={'Caveat'} as={'span'} color={'green.400'}>Kuala Lumpur, Malaysia</Text> . Currently, i work for
-              <Text fontWeight={600} fontFamily={'Caveat'} as={'span'} color={'green.400'}> AirAsia</Text>
+          <Text fontFamily={'Raleway'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
+            <Text color={'darkgray.500'}>
+              I'm a <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> Software <span id='text-dev'>Developer</span> </Text>
+              based in <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}>Kuala Lumpur, Malaysia</Text>. Currently, i work for
+
+              <Link href={'https://airasia.com'} target={'_blank'} style={{ textDecoration: 'none' }}>
+                <Text fontWeight={600} fontFamily={'Raleway'} as={'span'} color={'green.400'}> AirAsia ✈️ </Text>
+              </Link>
+            </Text>
+          </Text>
+          <Text fontFamily={'Raleway'} fontSize={{ base: 'xl', sm: '2xl', md: '2xl' }}>
+            <Text color={'darkgray.500'}>
+              Here are some of the technologies that i have been using lately :
             </Text>
           </Text>
 
+          <SimpleGrid columns={2}>
+            <Box height={'auto'}>
+              <List spacing={5} pt={5} pb={5} pl={5}>
+                <ListItem>
+                  <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
+                  <Kbd padding={2}>Javascript (ES6+)</Kbd>
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
+                  <Kbd padding={2}>React</Kbd>
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
+                  <Kbd padding={2}>Flutter</Kbd>
+                </ListItem>
+              </List>
+            </Box>
+            <Box height={'auto'}>
+              <List spacing={5} pt={5} pb={5} pl={5}>
+                <ListItem>
+                  <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
+                  <Kbd padding={2}>Typescript</Kbd>
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
+                  <Kbd padding={2}>Node.js</Kbd>
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={MdSubdirectoryArrowRight} color='green.600' />
+                  <Kbd padding={2}>GraphQL</Kbd>
+                </ListItem>
+              </List>
+            </Box>
+          </SimpleGrid>
+
+
+
           <Stack
             direction={'column'}
-            spacing={3}
-            align={'center'}
-            alignSelf={'center'}
+            align={'left'}
+            alignSelf={'left'}
             position={'relative'}>
             <Link
-              style={{ textDecoration: 'none' }}
-              onClick={() => downloadFile(RESUME_PDF_URL)}
-            >
+              style={{ textDecoration: 'none', cursor: 'default' }}>
               <Button
                 colorScheme={'green'}
                 bg={'green.400'}
@@ -83,7 +131,8 @@ export default function Hero() {
                 px={6}
                 _hover={{
                   bg: 'green.500',
-                }}>
+                }}
+                onClick={() => downloadFile(RESUME_PDF_URL)}>
                 Resume
               </Button>
             </Link>
@@ -93,17 +142,17 @@ export default function Hero() {
                 color={useColorModeValue('gray.800', 'gray.300')}
                 w={71}
                 position={'absolute'}
-                right={-71}
-                top={'10px'}
+                left={100}
+                top={'33'}
               />
               <Text
-                fontSize={'lg'}
-                fontFamily={'Caveat'}
+                fontSize={'md'}
+                fontFamily={'Raleway'}
                 position={'absolute'}
-                right={'-125px'}
-                top={'-15px'}
-                transform={'rotate(10deg)'}>
-                download my resume
+                left={'120px'}
+                top={'12px'}
+                transform={'rotate(30deg)'}>
+                Resume PDF
               </Text>
             </Box>
           </Stack>

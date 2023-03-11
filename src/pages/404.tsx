@@ -26,7 +26,7 @@ const NotFound = () => {
 
           <Heading
             fontWeight={900}
-            fontFamily={'Caveat'}
+            fontFamily={'Raleway'}
             fontSize={{ sm: '2xl', md: '4xl', lg: '6xl' }}
             lineHeight={'110%'}
           >
@@ -35,7 +35,7 @@ const NotFound = () => {
 
           <Heading
             fontWeight={900}
-            fontFamily={'Caveat'}
+            fontFamily={'Raleway'}
             fontSize={{ sm: '2xl', md: '4xl', lg: '6xl' }}
             lineHeight={'110%'}
           >
@@ -44,7 +44,7 @@ const NotFound = () => {
 
           <Heading
             fontWeight={900}
-            fontFamily={'Caveat'}
+            fontFamily={'Raleway'}
             fontSize={{ sm: '2xl', md: '4xl', lg: '6xl' }}
             lineHeight={'110%'}
           >
@@ -53,7 +53,7 @@ const NotFound = () => {
 
           <Heading
             fontWeight={900}
-            fontFamily={'Caveat'}
+            fontFamily={'Raleway'}
             fontSize={{ sm: '2xl', md: '4xl', lg: '6xl' }}
             lineHeight={'110%'}
           >
