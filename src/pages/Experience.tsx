@@ -219,11 +219,10 @@ const Experience = () => {
               </CardHeader>
               <CardBody>
                 <Flex gap={2} justifyContent={'space'} wrap={'wrap'}>
-                  <Badge>React</Badge>
-                  <Badge>Express.js</Badge>
-                  <Badge>MongoDB</Badge>
-                  <Badge>Node.js</Badge>
-                  <Badge>Unity AR</Badge>
+                  <Badge>Angular</Badge>
+                  <Badge>Java</Badge>
+                  <Badge>oracledb</Badge>
+                  <Badge>spring mvc</Badge>
                 </Flex>
               </CardBody>
 
