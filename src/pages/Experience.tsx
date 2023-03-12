@@ -12,7 +12,9 @@ import {
   Badge,
   CardHeader,
   SimpleGrid,
-  Flex
+  Flex,
+  CardFooter,
+  Button
 } from "@chakra-ui/react"
 import { TiBriefcase } from "react-icons/ti";
 import appasia from "../assets/appasia.png";
@@ -20,7 +22,10 @@ import dexlabs from "../assets/dexlabs.svg";
 import kerrylogistics from "../assets/kerrylogistics.svg";
 import capitala from "../assets/capitala.png";
 import thetaservicepartner from "../assets/thetaservicepartner.png";
+import uitm from "../assets/uitm.png";
+import unikllogo from "../assets/unikllogo.png";
 import { useState, useEffect } from "react";
+import { FaGraduationCap } from "react-icons/fa";
 
 const Experience = () => {
   const [load, setLoad] = useState(false);
@@ -37,7 +42,6 @@ const Experience = () => {
 
           <Heading
             fontWeight={600}
-
             fontSize={50}
             lineHeight={'110%'}
             pb={10}
@@ -46,8 +50,8 @@ const Experience = () => {
 
           </Heading>
 
-          <SimpleGrid columns={1} spacing={10}>
-            <Card>
+          <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing={10}>
+            <Card position={'relative'}>
               <Image
                 borderTopRadius={5}
                 objectFit='contain'
@@ -58,25 +62,28 @@ const Experience = () => {
                 backgroundColor={'white'}
               />
               <CardHeader>
-                <Flex justify={'space-between'} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
+                <Flex justify={'space-between'} flexDirection={'column'}>
+                  <Badge position={'absolute'} left={2} top={2} variant='solid' colorScheme='green'>Current</Badge>
                   <Box>
-                    <Heading size='md'>Capital A</Heading>
+                    <Heading size='lg'>Capital A</Heading>
                     <Text>Software Engineer I</Text>
                   </Box>
                   <Box>
-                    <Text>Dec 2022-Present</Text>
+                    <Text>Dec 22' - Present</Text>
                   </Box>
-
                 </Flex>
               </CardHeader>
               <CardBody>
-                <Stack direction={{ sm: 'column', md: 'row', lg: 'row' }} textAlign={'center'}>
+                <Flex gap={2} justifyContent={'space'} wrap={'wrap'}>
                   <Badge>React</Badge>
                   <Badge>Next.js</Badge>
                   <Badge>Flutter</Badge>
                   <Badge>GraphQL</Badge>
-                </Stack>
+                </Flex>
               </CardBody>
+              <CardFooter>
+                <Button onClick={() => parent.open('https://www.capitala.com/')}>Details</Button>
+              </CardFooter>
             </Card>
 
             <Card>
@@ -90,26 +97,29 @@ const Experience = () => {
                 backgroundColor={'white'}
               />
               <CardHeader>
-                <Flex justify={'space-between'} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
+                <Flex justify={'space-between'} flexDirection={'column'}>
                   <Box>
-                    <Heading size='md'>Dex Labs</Heading>
+                    <Heading size='lg'>Dex Labs</Heading>
                     <Text>Software Developer</Text>
                   </Box>
                   <Box>
-                    <Text>Feb 2022 - Dec 2022</Text>
+                    <Text>Feb 22' - Dec 22'</Text>
                   </Box>
-
                 </Flex>
               </CardHeader>
               <CardBody>
-                <Stack direction={{ sm: 'column', md: 'row', lg: 'row' }} textAlign={'center'}>
+                <Flex gap={2} justifyContent={'space'} wrap={'wrap'}>
                   <Badge>React</Badge>
                   <Badge>Express.js</Badge>
                   <Badge>MongoDB</Badge>
                   <Badge>Node.js</Badge>
                   <Badge>Unity AR</Badge>
-                </Stack>
+                </Flex>
               </CardBody>
+
+              <CardFooter>
+                <Button onClick={() => parent.open('https://dex-labs.com/')}>Details</Button>
+              </CardFooter>
             </Card>
 
             <Card>
@@ -117,30 +127,34 @@ const Experience = () => {
                 borderTopRadius={5}
                 objectFit='contain'
                 w={'auto'}
-                p={5}
                 height={200}
+                p={10}
                 src={appasia}
                 backgroundColor={'white'}
               />
               <CardHeader>
-                <Flex justify={'space-between'} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
+                <Flex justify={'space-between'} flexDirection={'column'}>
                   <Box>
-                    <Heading size='md'>Appasia</Heading>
+                    <Heading size='lg'>Appasia</Heading>
                     <Text>Web Application Developer</Text>
                   </Box>
                   <Box>
-                    <Text>July 2021 - Jan 2022</Text>
+                    <Text>Aug 21' - Jan 22'</Text>
                   </Box>
-
                 </Flex>
               </CardHeader>
               <CardBody>
-                <Stack direction={{ sm: 'column', md: 'row', lg: 'row' }} textAlign={'center'}>
+                <Flex gap={2} justifyContent={'space'} wrap={'wrap'}>
                   <Badge>Angular</Badge>
-                  <Badge>PHP Laravel</Badge>
-                  <Badge>MySQL</Badge>
-                </Stack>
+                  <Badge>Laravel</Badge>
+                  <Badge>PHP</Badge>
+                  <Badge>MYSQL</Badge>
+                </Flex>
               </CardBody>
+
+              <CardFooter>
+                <Button onClick={() => parent.open('https://www.appasia.com/')}>Details</Button>
+              </CardFooter>
             </Card>
 
             <Card>
@@ -149,29 +163,37 @@ const Experience = () => {
                 objectFit='contain'
                 w={'auto'}
                 height={200}
-                padding={10}
+                p={10}
                 src={kerrylogistics}
                 backgroundColor={'white'}
               />
               <CardHeader>
-                <Flex justify={'space-between'} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
+                <Flex justify={'space-between'} flexDirection={'column'}>
                   <Box>
-                    <Heading size='md'>Kerry Logistics</Heading>
+                    <Heading size='lg'>Kerry Logistics</Heading>
                     <Text>Junior Software Engineer</Text>
                   </Box>
                   <Box>
-                    <Text>July 2020 - July 2021</Text>
+                    <Text>July 20' - July 21'</Text>
                   </Box>
-
                 </Flex>
               </CardHeader>
               <CardBody>
-                <Stack direction={{ sm: 'column', md: 'row', lg: 'row' }} textAlign={'center'}>
+                <Flex gap={2} justifyContent={'space'} wrap={'wrap'}>
                   <Badge>Angular</Badge>
-                  <Badge>PHP Laravel</Badge>
-                  <Badge>MySQL</Badge>
-                </Stack>
+                  <Badge>ASP.Net Core 5</Badge>
+                  <Badge>MSSQL</Badge>
+                  <Badge>GOLANG</Badge>
+                  <Badge>Docker</Badge>
+                  <Badge>PostgreSQL</Badge>
+                  <Badge>Redis</Badge>
+                  <Badge>Rabbit MQ</Badge>
+                </Flex>
               </CardBody>
+
+              <CardFooter>
+                <Button onClick={() => parent.open('https://www.kerrylogistics.com/')}>Details</Button>
+              </CardFooter>
             </Card>
 
             <Card>
@@ -179,30 +201,99 @@ const Experience = () => {
                 borderTopRadius={5}
                 objectFit='contain'
                 w={'auto'}
-                p={5}
                 height={200}
+                p={10}
                 src={thetaservicepartner}
                 backgroundColor={'white'}
               />
               <CardHeader>
-                <Flex justify={'space-between'} flexDirection={{ sm: 'column', md: 'row', lg: 'row' }}>
+                <Flex justify={'space-between'} flexDirection={'column'}>
                   <Box>
-                    <Heading size='md'>Theta Service Partner</Heading>
+                    <Heading size='lg'>Theta Service Partner</Heading>
                     <Text>Software Engineer Intern</Text>
                   </Box>
                   <Box>
-                    <Text>Jan 2020 - May 2020</Text>
+                    <Text>Jan 20' - May 20'</Text>
                   </Box>
-
                 </Flex>
               </CardHeader>
               <CardBody>
-                <Stack direction={{ sm: 'column', md: 'row', lg: 'row' }} textAlign={'center'}>
-                  <Badge>Angular</Badge>
-                  <Badge>Sring MVC</Badge>
-                  <Badge>Oracle DB</Badge>
-                </Stack>
+                <Flex gap={2} justifyContent={'space'} wrap={'wrap'}>
+                  <Badge>React</Badge>
+                  <Badge>Express.js</Badge>
+                  <Badge>MongoDB</Badge>
+                  <Badge>Node.js</Badge>
+                  <Badge>Unity AR</Badge>
+                </Flex>
               </CardBody>
+
+              <CardFooter>
+                <Button onClick={() => parent.open('https://www.thetasp.com/')}>Details</Button>
+              </CardFooter>
+            </Card>
+
+          </SimpleGrid>
+
+        </Container>
+
+        <Container pt={10} alignContent={'center'}>
+
+          <Heading
+            fontWeight={600}
+            fontSize={50}
+            lineHeight={'110%'}
+            pb={10}
+          >
+            <Icon as={FaGraduationCap} pt={4} /> Education
+
+          </Heading>
+
+          <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing={10}>
+            <Card position={'relative'}>
+              <Image
+                borderTopRadius={5}
+                objectFit='contain'
+                w={'auto'}
+                height={200}
+                p={0}
+                src={unikllogo}
+                backgroundColor={'white'}
+              />
+              <CardHeader>
+                <Flex justify={'space-between'} flexDirection={'column'}>
+                  <Box>
+                    <Heading size='md'>Universiti Kuala Lumpur</Heading>
+                    <Text>Bachelor of IT in Software Engineering</Text>
+                  </Box>
+                  <Box>
+                    <Text>2016 - 2020</Text>
+                  </Box>
+                </Flex>
+              </CardHeader>
+            </Card>
+
+            <Card>
+              <Image
+                borderTopRadius={5}
+                objectFit='contain'
+                w={'auto'}
+                height={200}
+                p={10}
+                src={uitm}
+                backgroundColor={'white'}
+              />
+              <CardHeader>
+                <Flex justify={'space-between'} flexDirection={'column'}>
+                  <Box>
+                    <Heading size='md'>Universiti Teknologi Mara</Heading>
+                    <Text>Foundation in Engineering</Text>
+                  </Box>
+                  <Box>
+                    <Text>2015 - 2016</Text>
+                  </Box>
+                </Flex>
+              </CardHeader>
+
             </Card>
 
           </SimpleGrid>
