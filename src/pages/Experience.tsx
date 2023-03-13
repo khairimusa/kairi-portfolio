@@ -1,7 +1,6 @@
 import {
   Box,
   Container,
-  Stack,
   Heading,
   SlideFade,
   Card,
@@ -14,7 +13,8 @@ import {
   SimpleGrid,
   Flex,
   CardFooter,
-  Button
+  Button,
+  Link
 } from "@chakra-ui/react"
 import { TiBriefcase } from "react-icons/ti";
 import appasia from "../assets/appasia.png";
@@ -26,6 +26,7 @@ import uitm from "../assets/uitm.png";
 import unikllogo from "../assets/unikllogo.png";
 import { useState, useEffect } from "react";
 import { FaGraduationCap } from "react-icons/fa";
+import Milestones from "../components/Milestone";
 
 const Experience = () => {
   const [load, setLoad] = useState(false);
@@ -38,11 +39,11 @@ const Experience = () => {
     <SlideFade in={load} offsetY={'100px'}>
       <Box p={4} h='auto' >
 
-        <Container alignContent={'center'}>
+        <Container maxW={'3xl'} alignContent={'center'}>
 
           <Heading
             fontWeight={600}
-            fontSize={50}
+            fontSize={{ sm: 45, md: 50, lg: 50 }}
             lineHeight={'110%'}
             pb={10}
           >
@@ -235,7 +236,7 @@ const Experience = () => {
 
         </Container>
 
-        <Container pt={10} alignContent={'center'}>
+        <Container maxW={'3xl'} alignContent={'center'}>
 
           <Heading
             fontWeight={600}
@@ -248,56 +249,63 @@ const Experience = () => {
           </Heading>
 
           <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing={10}>
-            <Card position={'relative'}>
-              <Image
-                borderTopRadius={5}
-                objectFit='contain'
-                w={'auto'}
-                height={200}
-                p={0}
-                src={unikllogo}
-                backgroundColor={'white'}
-              />
-              <CardHeader>
-                <Flex justify={'space-between'} flexDirection={'column'}>
-                  <Box>
-                    <Heading size='md'>Universiti Kuala Lumpur</Heading>
-                    <Text>Bachelor of IT in Software Engineering</Text>
-                  </Box>
-                  <Box>
-                    <Text>2016 - 2020</Text>
-                  </Box>
-                </Flex>
-              </CardHeader>
-            </Card>
+            <Link href={'https://www.unikl.edu.my/'} target={'_blank'} style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              <Card position={'relative'}>
+                <Image
+                  borderTopRadius={5}
+                  objectFit='contain'
+                  w={'auto'}
+                  height={200}
+                  p={0}
+                  src={unikllogo}
+                  backgroundColor={'white'}
+                />
+                <CardHeader>
+                  <Flex justify={'space-between'} flexDirection={'column'}>
+                    <Box>
+                      <Heading size='md'>Universiti Kuala Lumpur</Heading>
+                      <Text>Bachelor of IT in Software Engineering</Text>
+                    </Box>
+                    <Box>
+                      <Text>2016 - 2020</Text>
+                    </Box>
+                  </Flex>
+                </CardHeader>
+              </Card>
+            </Link>
 
-            <Card>
-              <Image
-                borderTopRadius={5}
-                objectFit='contain'
-                w={'auto'}
-                height={200}
-                p={10}
-                src={uitm}
-                backgroundColor={'white'}
-              />
-              <CardHeader>
-                <Flex justify={'space-between'} flexDirection={'column'}>
-                  <Box>
-                    <Heading size='md'>Universiti Teknologi Mara</Heading>
-                    <Text>Foundation in Engineering</Text>
-                  </Box>
-                  <Box>
-                    <Text>2015 - 2016</Text>
-                  </Box>
-                </Flex>
-              </CardHeader>
-
-            </Card>
-
+            <Link href={'https://www.uitm.edu.my/index.php/ms/'} target={'_blank'} style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              <Card>
+                <Image
+                  borderTopRadius={5}
+                  objectFit='contain'
+                  w={'auto'}
+                  height={200}
+                  p={10}
+                  src={uitm}
+                  backgroundColor={'white'}
+                />
+                <CardHeader>
+                  <Flex justify={'space-between'} flexDirection={'column'}>
+                    <Box>
+                      <Heading size='md'>Universiti Teknologi Mara</Heading>
+                      <Text>Foundation in Engineering</Text>
+                    </Box>
+                    <Box>
+                      <Text>2015 - 2016</Text>
+                    </Box>
+                  </Flex>
+                </CardHeader>
+              </Card>
+            </Link>
           </SimpleGrid>
-
         </Container>
+
+        {/* <Container maxW={'3xl'} alignContent={'center'}>
+          <Milestones />
+        </Container> */}
+
+
       </Box>
     </SlideFade >
   )
