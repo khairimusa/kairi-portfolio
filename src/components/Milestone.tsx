@@ -4,19 +4,30 @@ import {
   HStack,
   Flex,
   useColorModeValue,
-  useBreakpointValue,
+
   Heading,
-  Icon
+  Icon,
+  useDisclosure,
+  Button,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Link,
+  Tooltip,
 } from '@chakra-ui/react';
 import appasia from "../assets/appasia.png";
 import dexlabs from "../assets/dexlabs.svg";
 import kerrylogistics from "../assets/kerrylogistics.svg";
 import capitala from "../assets/capitala.png";
 import thetaservicepartner from "../assets/thetaservicepartner.png";
-import { TiBriefcase } from 'react-icons/ti';
 import CareerCard from './CareerCard';
+import { FaBriefcase } from 'react-icons/fa';
 
-const milestones = [
+const companies = [
   {
     id: 1,
     companyName: 'Capital A',
@@ -25,49 +36,61 @@ const milestones = [
     techStack: ['React', 'Next.js', 'Flutter', 'GraphQL'],
     companyWebsite: 'https://www.capitala.com/',
     companyLogo: capitala,
-    alt: 'company image',
+    alt: 'capitala-logo',
     isCurrentCompany: true,
+    padding: 0,
   },
   {
     id: 2,
-    companyName: 'Capital A',
-    position: 'Software Engineer I',
-    dateStartEnd: 'Dec 22 ~ Present',
-    techStack: ['React', 'Next.js', 'Flutter', 'GraphQL'],
-    companyWebsite: 'https://www.capitala.com/',
-    isCurrentCompany: true
+    companyName: 'Dex Labs',
+    position: 'Software Developer',
+    dateStartEnd: 'Feb 22 ~ Dec 22',
+    techStack: ['Reach', 'Express.js', 'MongoDB', 'Node.js', 'Unity AR'],
+    companyWebsite: 'https://dex-labs.com/',
+    companyLogo: dexlabs,
+    alt: 'dexlabs-logo',
+    isCurrentCompany: false,
+    padding: 2,
   },
   {
     id: 3,
-    companyName: 'Capital A',
-    position: 'Software Engineer I',
-    dateStartEnd: 'Dec 22 ~ Present',
-    techStack: ['React', 'Next.js', 'Flutter', 'GraphQL'],
-    companyWebsite: 'https://www.capitala.com/',
-    isCurrentCompany: true
+    companyName: 'Appasia',
+    position: 'Web App Developer',
+    dateStartEnd: 'Jul 21 ~ Jan 22',
+    techStack: ['Angular 8+', 'Laravel', 'PHP', 'MySQL'],
+    companyWebsite: 'https://www.appasia.com/',
+    companyLogo: appasia,
+    alt: 'appasia-logo',
+    isCurrentCompany: false,
+    padding: 2,
   },
   {
     id: 4,
-    companyName: 'Capital A',
-    position: 'Software Engineer I',
-    dateStartEnd: 'Dec 22 ~ Present',
-    techStack: ['React', 'Next.js', 'Flutter', 'GraphQL'],
-    companyWebsite: 'https://www.capitala.com/',
-    isCurrentCompany: true
+    companyName: 'Kerry Logistics',
+    position: 'Jr. Software Engineer',
+    dateStartEnd: 'Jul 20 ~ Jul 21',
+    techStack: ['Angular 8+', 'Asp.Net Core 5', 'MSSQL', 'Golang', 'Docker'],
+    companyWebsite: 'https://www.linkedin.com/company/kln-services-sdn-bhd/',
+    companyLogo: kerrylogistics,
+    alt: 'kerrylogistics-logo',
+    isCurrentCompany: false,
+    padding: 2,
   },
   {
     id: 5,
-    companyName: 'Capital A',
-    position: 'Software Engineer I',
-    dateStartEnd: 'Dec 22 ~ Present',
-    techStack: ['React', 'Next.js', 'Flutter', 'GraphQL'],
-    companyWebsite: 'https://www.capitala.com/',
-    isCurrentCompany: true
+    companyName: 'Theta Service Partner',
+    position: 'Software Engineer Intern',
+    dateStartEnd: 'Feb 22 ~ Dec 22',
+    techStack: ['Angular 8+', 'Java', 'OracleDB', 'Spring MVC'],
+    companyWebsite: 'https://www.thetasp.com/',
+    companyLogo: thetaservicepartner,
+    alt: 'thetaservicepartner-logo',
+    isCurrentCompany: false,
+    padding: 2,
   },
 ];
 
 const Milestones = () => {
-
   return (
     <Box>
       <Heading
@@ -75,29 +98,39 @@ const Milestones = () => {
         fontWeight={600}
         fontSize={{ sm: 45, md: 50, lg: 50 }}
         lineHeight={'110%'}
-        pb={2}
+        pb={6}
       >
-        <Icon as={TiBriefcase} pt={4} /> Career
+        <Icon as={FaBriefcase} pt={4} /> Career
       </Heading>
 
-      {milestones.map((milestone) => (
-        <Flex key={milestone.id} mb="10px">
-          <LineWithDot />
-          <SampleCard {...milestone} />
-        </Flex>
-      ))}
-    </Box>
+      {companies.map((company) => (
+        <Link
+          href={company.companyWebsite}
+          target={'_self'}
+          style={{ textDecoration: 'none' }}
+        >
+
+          <Tooltip hasArrow label='More info' placement='top'>
+            <Flex
+              key={company.id}
+              cursor={'pointer'}
+              mb="25px"
+              _hover={{ base: { userSelect: 'none', WebkitTapHighlightColor: 'transparent' }, md: { userSelect: 'none', WebkitTapHighlightColor: 'transparent' }, lg: { userSelect: 'none', transform: 'translateY(-5px)', transition: 'transform 0.3s ease 0s' } }}
+              _focus={{ base: { outline: 'none !important' }, md: { outline: 'none !important' }, lg: { outline: 'none !important' } }}
+            >
+              <LineWithDot />
+              <SampleCard {...company} />
+            </Flex>
+          </Tooltip>
+        </Link>
+      ))
+      }
+    </Box >
+
   );
 };
 
-interface CardProps {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-}
-
-const SampleCard = (CardProps: any) => {
+const SampleCard = (props: any) => {
   return (
     <HStack
       flex={1}
@@ -108,7 +141,7 @@ const SampleCard = (CardProps: any) => {
       pos="relative"
     >
 
-      <CareerCard {...CardProps} />
+      <CareerCard {...props} />
 
     </HStack>
   );
@@ -124,7 +157,7 @@ const LineWithDot = () => {
       <chakra.span
         position="absolute"
         left="50%"
-        height="calc(100% + 10px)"
+        height="calc(100% + 30px)"
         border="1px solid"
         borderColor={useColorModeValue('gray.200', 'gray.700')}
         top="0px"
